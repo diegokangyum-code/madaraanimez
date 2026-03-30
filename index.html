@@ -3,10 +3,11 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>MadaraAnimez | Stream AniWave & WCO Style HD</title>
+    <title>MadaraAnimez | Stream AniWave & WCO HD</title>
     
+    <!-- Icons & Fonts -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700;800&family=Poppins:wght@600;700;800&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;800&family=Poppins:wght@700;800&display=swap" rel="stylesheet">
 
     <style>
         :root {
@@ -20,125 +21,284 @@
             --text-main: #f0f0f0;
             --text-muted: #8a8e99;
             --border: #262a35;
-            --radius: 10px;
+            --radius: 12px;
             --shadow: 0 10px 30px rgba(0,0,0,0.8);
-            --transition: all 0.3s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+            --transition: all 0.3s ease;
         }
 
         * { margin: 0; padding: 0; box-sizing: border-box; }
-        body { background-color: var(--bg-body); color: var(--text-main); font-family: 'Inter', sans-serif; overflow-x: hidden; line-height: 1.5; }
-        .wrapper { max-width: 1550px; margin: 0 auto; padding: 0 25px; }
-        ::-webkit-scrollbar { width: 8px; }
-        ::-webkit-scrollbar-track { background: var(--bg-darkest); }
-        ::-webkit-scrollbar-thumb { background: var(--primary); border-radius: 10px; }
+        body {
+            background-color: var(--bg-body);
+            color: var(--text-main);
+            font-family: 'Inter', sans-serif;
+            overflow-x: hidden;
+            line-height: 1.5;
+        }
 
-        /* HEADER */
-        header { background: var(--bg-nav); padding: 12px 0; border-bottom: 1px solid var(--border); position: sticky; top: 0; z-index: 2000; box-shadow: var(--shadow); }
+        .wrapper { max-width: 1400px; margin: 0 auto; padding: 0 20px; }
+
+        /* --- HEADER --- */
+        header {
+            background: var(--bg-nav);
+            padding: 15px 0;
+            border-bottom: 1px solid var(--border);
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+            box-shadow: var(--shadow);
+        }
         .header-inner { display: flex; justify-content: space-between; align-items: center; }
-        .logo { font-size: 26px; font-weight: 800; text-transform: uppercase; text-decoration: none; color: #fff; display: flex; align-items: center; gap: 8px; }
+        .logo { 
+            font-size: 24px; 
+            font-weight: 800; 
+            text-decoration: none; 
+            color: #fff; 
+            display: flex; 
+            align-items: center; 
+            gap: 10px; 
+            font-family: 'Poppins';
+        }
         .logo span { color: var(--primary); }
 
-        .search-container { position: relative; width: 550px; }
-        .search-container input { width: 100%; background: var(--bg-input); border: 1px solid var(--border); padding: 12px 15px 12px 50px; border-radius: 8px; color: #fff; outline: none; }
-        .search-container i { position: absolute; left: 18px; top: 16px; color: var(--text-muted); }
+        .search-container { position: relative; width: 400px; }
+        .search-container input {
+            width: 100%;
+            background: var(--bg-input);
+            border: 1px solid var(--border);
+            padding: 10px 15px 10px 45px;
+            border-radius: 8px;
+            color: #fff;
+            outline: none;
+            transition: var(--transition);
+        }
+        .search-container input:focus { border-color: var(--primary); }
+        .search-container i { position: absolute; left: 15px; top: 13px; color: var(--text-muted); }
 
-        .nav-links { list-style: none; display: flex; gap: 20px; }
-        .nav-links a { text-decoration: none; color: var(--text-muted); font-weight: 600; font-size: 14px; }
-        .nav-links a.active { color: var(--primary); }
+        /* --- HERO --- */
+        .hero {
+            height: 450px;
+            position: relative;
+            background-size: cover;
+            background-position: center;
+            display: flex;
+            align-items: center;
+            border-radius: 0 0 30px 30px;
+            margin-bottom: 40px;
+            overflow: hidden;
+        }
+        .hero::after {
+            content: '';
+            position: absolute;
+            inset: 0;
+            background: linear-gradient(90deg, #050506 30%, rgba(5,5,6,0) 100%);
+        }
+        .hero-data { position: relative; z-index: 10; max-width: 600px; padding-left: 5%; }
+        .hero-title { font-size: 48px; font-family: 'Poppins'; font-weight: 800; line-height: 1.1; margin-bottom: 15px; }
+        .btn-play {
+            background: var(--primary);
+            color: white;
+            padding: 14px 30px;
+            border-radius: 10px;
+            font-weight: 800;
+            border: none;
+            cursor: pointer;
+            text-transform: uppercase;
+            display: inline-flex;
+            align-items: center;
+            gap: 10px;
+            transition: var(--transition);
+        }
+        .btn-play:hover { transform: scale(1.05); filter: brightness(1.1); }
 
-        /* HERO */
-        .hero { height: 500px; position: relative; background-size: cover; background-position: center; display: flex; align-items: center; border-radius: 0 0 40px 40px; margin-bottom: 40px; transition: 0.5s; }
-        .hero::after { content: ''; position: absolute; inset: 0; background: linear-gradient(90deg, #050506 20%, rgba(5,5,6,0) 100%); }
-        .hero-data { position: relative; z-index: 10; max-width: 700px; padding-left: 5%; }
-        .hero-title { font-size: 55px; font-weight: 800; margin-bottom: 15px; }
-        .btn-play { background: var(--primary); color: white; padding: 15px 35px; border-radius: 10px; font-weight: 800; border: none; cursor: pointer; display: inline-flex; align-items: center; gap: 10px; }
+        /* --- PLAYER SECTION --- */
+        #watch-section { display: none; margin-bottom: 50px; animation: fadeIn 0.5s ease; }
+        @keyframes fadeIn { from { opacity: 0; } to { opacity: 1; } }
 
-        /* PLAYER AREA */
-        #watch-section { display: none; margin-bottom: 40px; }
-        .player-frame { background: #000; border-radius: 20px; overflow: hidden; border: 2px solid var(--border); aspect-ratio: 16/9; position: relative; }
+        .player-wrapper {
+            background: #000;
+            border-radius: 20px;
+            overflow: hidden;
+            border: 2px solid var(--border);
+            box-shadow: var(--shadow);
+            aspect-ratio: 16/9;
+            position: relative;
+        }
         iframe { width: 100%; height: 100%; border: none; }
+
+        .player-controls {
+            background: var(--bg-nav);
+            padding: 20px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            border: 1px solid var(--border);
+            border-top: none;
+            border-radius: 0 0 20px 20px;
+        }
+
+        .server-btn {
+            background: var(--bg-input);
+            color: var(--text-muted);
+            padding: 8px 16px;
+            border-radius: 6px;
+            font-size: 12px;
+            font-weight: 800;
+            cursor: pointer;
+            border: 1px solid transparent;
+            margin-left: 10px;
+        }
+        .server-btn.active { background: var(--primary); color: #fff; }
+
+        /* --- EPISODES --- */
+        .ep-box {
+            background: var(--bg-card);
+            border-radius: 15px;
+            margin-top: 25px;
+            padding: 20px;
+            border: 1px solid var(--border);
+        }
+        .ep-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(60px, 1fr));
+            gap: 10px;
+            margin-top: 20px;
+            max-height: 200px;
+            overflow-y: auto;
+            padding-right: 5px;
+        }
+        .ep-item {
+            background: var(--bg-input);
+            padding: 12px;
+            text-align: center;
+            border-radius: 8px;
+            cursor: pointer;
+            font-weight: 700;
+            transition: 0.2s;
+            border: 1px solid var(--border);
+        }
+        .ep-item:hover { border-color: var(--primary); }
+        .ep-item.active { background: var(--primary); border-color: var(--primary); color: white; }
+
+        /* --- CONTENT GRID --- */
+        .grid-title { font-size: 24px; font-weight: 800; margin-bottom: 25px; display: flex; align-items: center; gap: 10px; }
+        .grid-title::before { content: ''; width: 5px; height: 25px; background: var(--primary); border-radius: 10px; }
         
-        .player-bar { background: var(--bg-nav); padding: 15px 30px; display: flex; justify-content: space-between; align-items: center; border: 1px solid var(--border); border-top: none; border-radius: 0 0 20px 20px; }
-        .server-tab { background: var(--bg-input); color: var(--text-muted); padding: 8px 15px; border-radius: 5px; font-size: 12px; font-weight: 800; cursor: pointer; margin-left: 10px; }
-        .server-tab.active { background: var(--primary); color: #fff; }
+        .anime-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+            gap: 25px;
+        }
+        .anime-card {
+            background: var(--bg-card);
+            border-radius: 15px;
+            overflow: hidden;
+            cursor: pointer;
+            transition: var(--transition);
+            border: 1px solid var(--border);
+            position: relative;
+        }
+        .anime-card:hover { transform: translateY(-8px); border-color: var(--primary); }
+        .card-img { height: 280px; position: relative; }
+        .card-img img { width: 100%; height: 100%; object-fit: cover; }
+        .card-details { padding: 15px; }
+        .card-details h4 { 
+            font-size: 15px; 
+            white-space: nowrap; 
+            overflow: hidden; 
+            text-overflow: ellipsis; 
+            margin-bottom: 5px;
+        }
+        .card-tag { 
+            font-size: 11px; 
+            background: var(--primary); 
+            padding: 2px 8px; 
+            border-radius: 4px; 
+            font-weight: 800; 
+        }
 
-        /* GRID */
-        .content-layout { display: grid; grid-template-columns: 1fr 350px; gap: 40px; }
-        .anime-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(200px, 1fr)); gap: 25px; }
-        .anime-card { background: var(--bg-card); border-radius: 12px; overflow: hidden; cursor: pointer; transition: 0.3s; border: 1px solid var(--border); }
-        .anime-card:hover { transform: translateY(-5px); border-color: var(--primary); }
-        .card-media { height: 280px; position: relative; }
-        .card-media img { width: 100%; height: 100%; object-fit: cover; }
-        .card-content { padding: 15px; }
-        .card-title { font-size: 15px; font-weight: 700; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
+        /* --- LOADER --- */
+        .loader-overlay {
+            position: absolute;
+            inset: 0;
+            background: #000;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            z-index: 100;
+        }
 
-        /* EPISODES */
-        .ep-list-box { background: var(--bg-card); border-radius: 15px; margin-top: 20px; padding: 20px; border: 1px solid var(--border); }
-        .ep-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(55px, 1fr)); gap: 8px; max-height: 250px; overflow-y: auto; margin-top: 15px; }
-        .ep-btn { background: var(--bg-input); padding: 10px; text-align: center; border-radius: 5px; cursor: pointer; font-weight: 700; font-size: 13px; border: 1px solid var(--border); }
-        .ep-btn.active { background: var(--primary); border-color: var(--primary); }
+        footer {
+            margin-top: 100px;
+            padding: 60px 0;
+            background: var(--bg-nav);
+            border-top: 1px solid var(--border);
+            text-align: center;
+            color: var(--text-muted);
+            font-size: 14px;
+        }
 
-        /* ALERT */
-        #alert-box { position: fixed; top: 20px; right: 20px; background: #12141a; padding: 15px 25px; border-radius: 8px; border-left: 5px solid var(--primary); transform: translateX(150%); transition: 0.5s; z-index: 9999; }
-        #alert-box.active { transform: translateX(0); }
-
-        .loader { position: absolute; inset: 0; background: #000; display: flex; align-items: center; justify-content: center; z-index: 10; flex-direction: column; }
-
-        footer { background: var(--bg-nav); padding: 50px 0; border-top: 1px solid var(--border); margin-top: 100px; text-align: center; color: var(--text-muted); font-size: 13px; }
+        /* Mobile Adjustments */
+        @media (max-width: 768px) {
+            .search-container { width: 100%; margin-top: 15px; }
+            .header-inner { flex-direction: column; }
+            .hero-title { font-size: 32px; }
+            .anime-grid { grid-template-columns: repeat(2, 1fr); }
+        }
     </style>
 </head>
 <body>
-
-    <div id="alert-box"><span id="alert-msg"></span></div>
 
     <header>
         <div class="wrapper header-inner">
             <a href="#" class="logo" onclick="location.reload()">MADARA<span>ANIMEZ</span></a>
             <div class="search-container">
                 <i class="fas fa-search"></i>
-                <input type="text" id="search-box" placeholder="Search anime..." onkeyup="Engine.search()">
+                <input type="text" id="search-input" placeholder="Search for anime or cartoons..." onkeyup="Engine.search()">
             </div>
-            <ul class="nav-links">
-                <li><a href="#" class="active">Home</a></li>
-                <li><a href="#">AniWave Style</a></li>
-                <li><a href="#">WCO Style</a></li>
-            </ul>
+            <div style="font-weight: 800; color: var(--primary); font-size: 12px; letter-spacing: 1px;">V3.0 ONLINE</div>
         </div>
     </header>
 
     <section class="hero" id="hero-banner">
         <div class="hero-data">
+            <div style="color: var(--primary); font-weight: 800; margin-bottom: 10px; font-size: 14px;">#1 SPOTLIGHT</div>
             <h1 class="hero-title" id="hero-title">One Piece</h1>
-            <p id="hero-desc" style="margin-bottom: 25px; color: #ccc;">Monkey D. Luffy refuses to let anyone or anything stand in the way of his quest to become the king of all pirates.</p>
-            <button class="btn-play" onclick="Engine.startHero()"><i class="fas fa-play"></i> Watch Now</button>
+            <p id="hero-desc" style="color: #bbb; margin-bottom: 25px;">Monkey D. Luffy refuses to let anyone or anything stand in the way of his quest to become the king of all pirates.</p>
+            <button class="btn-play" onclick="Engine.startHero()">
+                <i class="fas fa-play"></i> Watch Now
+            </button>
         </div>
     </section>
 
     <main class="wrapper">
+        
+        <!-- WATCH SECTION -->
         <section id="watch-section">
-            <div class="player-frame">
-                <div id="player-loader" class="loader">
-                    <i class="fas fa-spinner fa-spin" style="font-size: 40px; color: var(--primary); margin-bottom: 15px;"></i>
-                    <p>Loading Secure Stream...</p>
+            <div class="player-wrapper">
+                <div id="player-loader" class="loader-overlay">
+                    <i class="fas fa-circle-notch fa-spin" style="font-size: 50px; color: var(--primary); margin-bottom: 20px;"></i>
+                    <p style="font-weight: 800; letter-spacing: 1px;">DECRYPTING STREAM...</p>
                 </div>
-                <iframe id="main-iframe" src="" allowfullscreen allow="autoplay"></iframe>
+                <iframe id="main-player" src="" allowfullscreen allow="autoplay; encrypted-media"></iframe>
             </div>
-            <div class="player-bar">
+
+            <div class="player-controls">
                 <div>
-                    <h3 id="playing-title">Title</h3>
-                    <span id="playing-ep" style="color: var(--primary); font-weight: 800;">EP 1</span>
+                    <h2 id="playing-title" style="font-size: 20px;">Title</h2>
+                    <span id="playing-ep" style="color: var(--primary); font-weight: 800;">EPISODE 1</span>
                 </div>
                 <div style="display: flex; align-items: center;">
-                    <span style="font-size: 11px; font-weight: 800; color: var(--text-muted);">SOURCE:</span>
-                    <div class="server-tab active" onclick="Engine.switchServer('vidsrc', this)">AniWave (Sub)</div>
-                    <div class="server-tab" onclick="Engine.switchServer('embedsu', this)">WCO Style (Dub)</div>
+                    <span style="font-size: 11px; font-weight: 800; color: var(--text-muted); text-transform: uppercase;">Server:</span>
+                    <div class="server-btn active" onclick="Engine.switchServer('vidsrc', this)">Server 1 (HD)</div>
+                    <div class="server-btn" onclick="Engine.switchServer('vidsrc_pm', this)">Server 2 (Backup)</div>
                 </div>
             </div>
 
-            <div class="ep-list-box">
+            <div class="ep-box">
                 <div style="display: flex; justify-content: space-between; align-items: center;">
-                    <h3>Episodes</h3>
-                    <select id="season-selector" onchange="Engine.changeSeason()" style="background:#1f222b; color:#fff; border:1px solid #262a35; padding:5px 10px; border-radius:5px;">
+                    <h3 style="font-family: 'Poppins';">Episode List</h3>
+                    <select id="season-picker" onchange="Engine.changeSeason()" style="background: var(--bg-input); color: white; border: 1px solid var(--border); padding: 5px 15px; border-radius: 5px;">
                         <option value="s1">Season 1</option>
                     </select>
                 </div>
@@ -146,160 +306,157 @@
             </div>
         </section>
 
-        <div class="content-layout">
-            <div>
-                <h2 style="margin-bottom: 20px;" id="grid-label">Trending Now</h2>
-                <div class="anime-grid" id="main-grid"></div>
-            </div>
-            <div class="sidebar">
-                <div style="background: var(--bg-card); padding: 20px; border-radius: 15px; border: 1px solid var(--border);">
-                    <h3 style="margin-bottom: 15px;">Notice</h3>
-                    <p style="font-size: 13px; color: var(--text-muted);">If the player is blank, disable your AdBlocker. Third-party servers (AniWave/WCO) require ads to function.</p>
-                </div>
-            </div>
+        <!-- GRID SECTION -->
+        <h2 class="grid-title" id="grid-label">Trending Now</h2>
+        <div class="anime-grid" id="main-grid">
+            <!-- Injected by JS -->
         </div>
     </main>
 
     <footer>
-        <p>&copy; 2024 MadaraAnimez - AniWave/WCO Embed Engine</p>
-        <p>This site does not store files, it only links to third-party services.</p>
+        <div class="wrapper">
+            <h2 class="logo" style="justify-content: center; margin-bottom: 20px;">MADARA<span>ANIMEZ</span></h2>
+            <p>MadaraAnimez is a portal for third-party embeds. We do not host files.</p>
+            <p style="margin-top: 10px; font-size: 12px;">AniWave & WCO Source Engine V3.0</p>
+        </div>
     </footer>
 
     <script>
+        /**
+         * MADARA ENGINE V3.0
+         * Using MAL IDs for Anime & IMDB IDs for Western Cartoons/TV
+         */
         const Engine = (() => {
-            // THE DATABASE (Using MAL IDs for Anime and IMDB IDs for Western shows like Invincible)
-            const animeLibrary = [
-                { id: 1, title: "One Piece", mal_id: "21", img: "https://m.media-amazon.com/images/M/MV5BMTNjNGU4ZGUtZWIyMi00ZTMyLTgxOTItZTM2YjFhNWJlOWEzXkEyXkFqcGdeQXVyMjc5NjEzNjU@._V1_.jpg", s1: 1100, score: "9.2", type: "anime" },
-                { id: 2, title: "Solo Leveling", mal_id: "52299", img: "https://m.media-amazon.com/images/M/MV5BODViZGM5NmEtYzhkZS00MWU1LWI0ZDgtYjI2Y2RjNWU2ZDI4XkEyXkFqcGdeQXVyNjAwNDUxODI@._V1_FMjpg_UX1000_.jpg", s1: 12, score: "8.9", type: "anime" },
-                { id: 3, title: "Invincible", imdb_id: "tt6741278", img: "https://m.media-amazon.com/images/M/MV5BMDEyZDYzNjgtYjNlNi00ODNlLWEzN2ItNTRlZjE1ZDM2NzA1XkEyXkFqcGdeQXVyMTU3ODQ0OTYz._V1_.jpg", s1: 8, s2: 8, score: "8.7", type: "tv" },
-                { id: 4, title: "Jujutsu Kaisen", mal_id: "40748", img: "https://m.media-amazon.com/images/M/MV5BNGYyZGM5MGMtYTY2Ni00M2Y1LWIzNjQtYWVmM2ZjZjEwYmJiXkEyXkFqcGdeQXVyMTUzMTg2ODkz._V1_FMjpg_UX1000_.jpg", s1: 24, s2: 23, score: "8.9", type: "anime" },
-                { id: 5, title: "Naruto Shippuden", mal_id: "1735", img: "https://m.media-amazon.com/images/M/MV5BZGFiMWFhNDAtMzUyZS00NmQ2LTljNDYtMmZjNTc5MDU1MDUyXkEyXkFqcGdeQXVyNjAwNDUxODI@._V1_FMjpg_UX1000_.jpg", s1: 500, score: "8.7", type: "anime" },
-                { id: 6, title: "Spy x Family", mal_id: "48837", img: "https://m.media-amazon.com/images/M/MV5BZWUyY2M2OTQtYTUxYi00YjBhLWE1YTAtN2Y4YTRmYzU1MGIxXkEyXkFqcGdeQXVyNjAwNDUxODI@._V1_FMjpg_UX1000_.jpg", s1: 25, s2: 12, score: "8.5", type: "anime" }
+
+            const database = [
+                { id: 1, title: "One Piece", mal_id: "21", img: "https://m.media-amazon.com/images/M/MV5BMTNjNGU4ZGUtZWIyMi00ZTMyLTgxOTItZTM2YjFhNWJlOWEzXkEyXkFqcGdeQXVyMjc5NjEzNjU@._V1_.jpg", s1: 1100, type: "anime", desc: "The journey of Luffy to become the Pirate King." },
+                { id: 2, title: "Solo Leveling", mal_id: "52299", img: "https://m.media-amazon.com/images/M/MV5BODViZGM5NmEtYzhkZS00MWU1LWI0ZDgtYjI2Y2RjNWU2ZDI4XkEyXkFqcGdeQXVyNjAwNDUxODI@._V1_FMjpg_UX1000_.jpg", s1: 12, type: "anime", desc: "The world's weakest hunter becomes the strongest." },
+                { id: 3, title: "Invincible", imdb_id: "tt6741278", img: "https://m.media-amazon.com/images/M/MV5BMDEyZDYzNjgtYjNlNi00ODNlLWEzN2ItNTRlZjE1ZDM2NzA1XkEyXkFqcGdeQXVyMTU3ODQ0OTYz._V1_.jpg", s1: 8, s2: 8, type: "tv", desc: "A teenage boy inherits his father's massive superhero powers." },
+                { id: 4, title: "Jujutsu Kaisen", mal_id: "40748", img: "https://m.media-amazon.com/images/M/MV5BNGYyZGM5MGMtYTY2Ni00M2Y1LWIzNjQtYWVmM2ZjZjEwYmJiXkEyXkFqcGdeQXVyMTUzMTg2ODkz._V1_FMjpg_UX1000_.jpg", s1: 24, s2: 23, type: "anime", desc: "Cursed spirits and the sorcerers who fight them." },
+                { id: 5, title: "Naruto Shippuden", mal_id: "1735", img: "https://m.media-amazon.com/images/M/MV5BZGFiMWFhNDAtMzUyZS00NmQ2LTljNDYtMmZjNTc5MDU1MDUyXkEyXkFqcGdeQXVyNjAwNDUxODI@._V1_FMjpg_UX1000_.jpg", s1: 500, type: "anime", desc: "Naruto returns to the Leaf Village after years of training." },
+                { id: 6, title: "Spy x Family", mal_id: "48837", img: "https://m.media-amazon.com/images/M/MV5BZWUyY2M2OTQtYTUxYi00YjBhLWE1YTAtN2Y4YTRmYzU1MGIxXkEyXkFqcGdeQXVyNjAwNDUxODI@._V1_FMjpg_UX1000_.jpg", s1: 25, s2: 12, type: "anime", desc: "A spy, an assassin, and a telepath form a fake family." }
             ];
 
             let state = {
-                currentAnime: animeLibrary[0],
-                currentEp: 1,
-                currentSzn: 's1',
+                activeAnime: database[0],
+                activeEp: 1,
+                activeSzn: 's1',
                 activeServer: 'vidsrc'
             };
 
-            const bootstrap = () => {
-                renderGrid(animeLibrary);
-                setHero(animeLibrary[0]);
+            const init = () => {
+                renderGrid(database);
+                setHero(database[0]);
             };
 
-            const renderGrid = (data) => {
+            const renderGrid = (list) => {
                 const grid = document.getElementById('main-grid');
-                grid.innerHTML = data.map(anime => `
-                    <div class="anime-card" onclick="Engine.loadAnime(${anime.id})">
-                        <div class="card-media"><img src="${anime.img}"></div>
-                        <div class="card-content">
-                            <div class="card-title">${anime.title}</div>
-                            <div style="font-size:12px; color:var(--text-muted)">${anime.type.toUpperCase()} • Star ${anime.score}</div>
+                grid.innerHTML = list.map(item => `
+                    <div class="anime-card" onclick="Engine.loadAnime(${item.id})">
+                        <div class="card-img">
+                            <img src="${item.img}" alt="${item.title}" loading="lazy">
+                        </div>
+                        <div class="card-details">
+                            <h4>${item.title}</h4>
+                            <span class="card-tag">${item.type.toUpperCase()}</span>
                         </div>
                     </div>
                 `).join('');
             };
 
             const setHero = (anime) => {
-                state.currentAnime = anime;
+                state.activeAnime = anime;
                 document.getElementById('hero-title').innerText = anime.title;
-                document.getElementById('hero-banner').style.backgroundImage = `url(${anime.img})`;
+                document.getElementById('hero-desc').innerText = anime.desc;
+                document.getElementById('hero-banner').style.backgroundImage = `url('${anime.img}')`;
             };
 
             const loadAnime = (id) => {
-                const anime = animeLibrary.find(x => x.id === id);
-                state.currentAnime = anime;
-                state.currentEp = 1;
-                state.currentSzn = 's1';
+                const anime = database.find(x => x.id === id);
+                state.activeAnime = anime;
+                state.activeEp = 1;
+                state.activeSzn = 's1';
 
                 document.getElementById('hero-banner').style.display = "none";
                 document.getElementById('watch-section').style.display = "block";
                 document.getElementById('playing-title').innerText = anime.title;
 
-                const picker = document.getElementById('season-selector');
+                // Seasons Setup
+                const picker = document.getElementById('season-picker');
                 picker.innerHTML = `<option value="s1">Season 1</option>`;
                 if(anime.s2) picker.innerHTML += `<option value="s2">Season 2</option>`;
 
                 renderEpisodes(anime.s1);
                 updateStream(1);
-                window.scrollTo({top: 0, behavior: 'smooth'});
+                window.scrollTo({ top: 0, behavior: 'smooth' });
             };
 
             const renderEpisodes = (count) => {
                 const grid = document.getElementById('ep-grid');
                 grid.innerHTML = "";
-                for(let i=1; i<=count; i++) {
-                    const btn = document.createElement('div');
-                    btn.className = 'ep-btn';
-                    btn.id = `ep-${i}`;
-                    btn.innerText = i;
-                    btn.onclick = () => updateStream(i);
-                    grid.appendChild(btn);
+                for(let i = 1; i <= count; i++) {
+                    const el = document.createElement('div');
+                    el.className = `ep-item ${i === 1 ? 'active' : ''}`;
+                    el.id = `ep-link-${i}`;
+                    el.innerText = i;
+                    el.onclick = () => updateStream(i);
+                    grid.appendChild(el);
                 }
-                document.getElementById('ep-1').classList.add('active');
             };
 
             const updateStream = (ep) => {
-                state.currentEp = ep;
-                const iframe = document.getElementById('main-iframe');
+                state.activeEp = ep;
+                const iframe = document.getElementById('main-player');
                 const loader = document.getElementById('player-loader');
-                
+                const sznNum = state.activeSzn.replace('s', '');
+
                 loader.style.display = "flex";
-                document.getElementById('playing-ep').innerText = "EP " + ep;
-                document.querySelectorAll('.ep-btn').forEach(b => b.classList.remove('active'));
-                document.getElementById(`ep-${ep}`).classList.add('active');
+                document.getElementById('playing-ep').innerText = "EPISODE " + ep;
+                
+                // Highlight active ep
+                document.querySelectorAll('.ep-item').forEach(el => el.classList.remove('active'));
+                document.getElementById(`ep-link-${ep}`).classList.add('active');
 
-                let embedUrl = "";
-                const sznNum = state.currentSzn.replace('s', '');
+                // CONSTRUCT URL
+                let baseUrl = state.activeServer === 'vidsrc' ? 'https://vidsrc.xyz/embed' : 'https://vidsrc.pm/embed';
+                let finalUrl = "";
 
-                if (state.activeServer === 'vidsrc') {
-                    // ANIWAVE STYLE (vidsrc.to)
-                    if (state.currentAnime.type === "anime") {
-                        embedUrl = `https://vidsrc.to/embed/anime/${state.currentAnime.mal_id}/${ep}`;
-                    } else {
-                        embedUrl = `https://vidsrc.to/embed/tv/${state.currentAnime.imdb_id}/${sznNum}/${ep}`;
-                    }
+                if (state.activeAnime.type === "anime") {
+                    finalUrl = `${baseUrl}/anime/${state.activeAnime.mal_id}/${ep}`;
                 } else {
-                    // WCO STYLE (embed.su)
-                    if (state.currentAnime.type === "anime") {
-                        embedUrl = `https://embed.su/embed/anime/${state.currentAnime.mal_id}/${ep}`;
-                    } else {
-                        embedUrl = `https://embed.su/embed/tv/${state.currentAnime.imdb_id}/${sznNum}/${ep}`;
-                    }
+                    finalUrl = `${baseUrl}/tv/${state.activeAnime.imdb_id}/${sznNum}/${ep}`;
                 }
 
-                iframe.src = embedUrl;
+                iframe.src = finalUrl;
                 setTimeout(() => { loader.style.display = "none"; }, 1500);
             };
 
             const switchServer = (srv, el) => {
                 state.activeServer = srv;
-                document.querySelectorAll('.server-tab').forEach(t => t.classList.remove('active'));
+                document.querySelectorAll('.server-btn').forEach(btn => btn.classList.remove('active'));
                 el.classList.add('active');
-                pushAlert("Switching Source...");
-                updateStream(state.currentEp);
+                updateStream(state.activeEp);
             };
 
             const search = () => {
-                const q = document.getElementById('search-box').value.toLowerCase();
-                const filtered = animeLibrary.filter(a => a.title.toLowerCase().includes(q));
+                const q = document.getElementById('search-input').value.toLowerCase();
+                const filtered = database.filter(x => x.title.toLowerCase().includes(q));
                 renderGrid(filtered);
-                document.getElementById('grid-label').innerText = q ? `Results for: ${q}` : "Trending Now";
+                document.getElementById('grid-label').innerText = q ? `Search Results: ${q}` : "Trending Now";
             };
 
-            const pushAlert = (msg) => {
-                const box = document.getElementById('alert-box');
-                document.getElementById('alert-msg').innerText = msg;
-                box.classList.add('active');
-                setTimeout(() => box.classList.remove('active'), 3000);
+            const changeSeason = () => {
+                const szn = document.getElementById('season-picker').value;
+                state.activeSzn = szn;
+                renderEpisodes(state.activeAnime[szn]);
+                updateStream(1);
             };
 
-            return { bootstrap, loadAnime, updateStream, switchServer, search, startHero: () => loadAnime(state.currentAnime.id) };
+            return { init, loadAnime, updateStream, switchServer, search, changeSeason, startHero: () => loadAnime(state.activeAnime.id) };
         })();
 
-        Engine.bootstrap();
+        // Start Application
+        Engine.init();
     </script>
 </body>
 </html>
