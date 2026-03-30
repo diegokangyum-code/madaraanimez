@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>MadaraAnimez | English Dubbed HD</title>
+    <title>MadaraAnimez | Dubbed HD Streaming</title>
     
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;800&family=Poppins:wght@700;800&display=swap" rel="stylesheet">
@@ -30,16 +30,18 @@
         .auth-btn { width: 100%; background: var(--primary); color: #fff; padding: 12px; border-radius: 8px; border: none; font-weight: 800; cursor: pointer; }
 
         /* HEADER */
-        header { background: var(--bg-nav); padding: 15px 0; border-bottom: 1px solid var(--border); position: sticky; top: 0; z-index: 1000; }
+        header { background: var(--bg-nav); padding: 15px 0; border-bottom: 1px solid var(--border); position: sticky; top: 0; z-index: 1000; box-shadow: 0 10px 30px rgba(0,0,0,0.5); }
         .header-inner { display: flex; justify-content: space-between; align-items: center; }
         .logo { font-size: 24px; font-weight: 800; text-decoration: none; color: #fff; font-family: 'Poppins'; }
         .logo span { color: var(--primary); }
 
         .search-container { position: relative; width: 400px; }
-        .search-container input { width: 100%; background: #1f222b; border: 1px solid var(--border); padding: 10px 15px 10px 45px; border-radius: 10px; color: #fff; outline: none; }
+        .search-container input { width: 100%; background: #1f222b; border: 1px solid var(--border); padding: 10px 15px 10px 45px; border-radius: 10px; color: #fff; outline: none; transition: 0.3s; }
+        .search-container input:focus { border-color: var(--primary); }
         .search-container i { position: absolute; left: 15px; top: 13px; color: var(--text-muted); }
 
-        .login-trigger { background: var(--primary); color: #fff; padding: 8px 20px; border-radius: 8px; font-weight: 800; cursor: pointer; font-size: 13px; }
+        .user-area { display: flex; align-items: center; gap: 15px; }
+        .btn-login { background: var(--primary); color: #fff; padding: 8px 18px; border-radius: 6px; font-weight: 800; cursor: pointer; font-size: 13px; }
 
         /* HERO AREA */
         .hero { height: 450px; position: relative; background-size: cover; background-position: center top; display: flex; align-items: center; border-bottom: 4px solid var(--primary); margin-bottom: 40px; }
@@ -50,27 +52,28 @@
 
         /* PLAYER SECTION */
         #watch-section { display: none; margin-bottom: 50px; }
-        .player-wrapper { background: #000; border-radius: 20px; overflow: hidden; border: 2px solid var(--border); aspect-ratio: 16/9; position: relative; }
+        .player-wrapper { background: #000; border-radius: 20px; overflow: hidden; border: 2px solid var(--border); aspect-ratio: 16/9; position: relative; box-shadow: 0 20px 50px rgba(0,0,0,0.7); }
         iframe { width: 100%; height: 100%; border: none; }
         .player-bar { background: var(--bg-nav); padding: 20px; display: flex; justify-content: space-between; align-items: center; border: 1px solid var(--border); border-top: none; border-radius: 0 0 20px 20px; }
-        .server-btn { background: #1f222b; color: var(--text-muted); padding: 10px 20px; border-radius: 8px; font-size: 12px; font-weight: 800; cursor: pointer; margin-left: 10px; }
+        .server-btn { background: #1f222b; color: var(--text-muted); padding: 10px 20px; border-radius: 8px; font-size: 12px; font-weight: 800; cursor: pointer; margin-left: 10px; border: 1px solid transparent; }
         .server-btn.active { background: var(--primary); color: #fff; }
 
         /* EPISODES */
         .ep-box { background: var(--bg-card); border-radius: 15px; margin-top: 25px; padding: 25px; border: 1px solid var(--border); }
         .ep-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(60px, 1fr)); gap: 10px; margin-top: 20px; max-height: 300px; overflow-y: auto; }
-        .ep-item { background: #1f222b; padding: 15px; text-align: center; border-radius: 8px; cursor: pointer; font-weight: 700; border: 1px solid var(--border); }
+        .ep-item { background: #1f222b; padding: 15px; text-align: center; border-radius: 8px; cursor: pointer; font-weight: 700; border: 1px solid var(--border); transition: 0.2s; }
+        .ep-item:hover { border-color: var(--primary); }
         .ep-item.active { background: var(--primary); border-color: var(--primary); }
 
         /* ANIME GRID */
         .grid-header { font-size: 26px; font-weight: 800; margin-bottom: 30px; border-left: 6px solid var(--primary); padding-left: 15px; }
-        .anime-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(200px, 1fr)); gap: 30px; }
+        .anime-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(180px, 1fr)); gap: 30px; }
         .anime-card { background: var(--bg-card); border-radius: 15px; overflow: hidden; cursor: pointer; transition: 0.4s; border: 1px solid var(--border); position: relative; }
-        .anime-card:hover { transform: translateY(-10px); border-color: var(--primary); }
-        .card-img { height: 300px; }
+        .anime-card:hover { transform: translateY(-10px); border-color: var(--primary); box-shadow: 0 15px 30px rgba(0,0,0,0.5); }
+        .card-img { height: 260px; }
         .card-img img { width: 100%; height: 100%; object-fit: cover; }
-        .card-details { padding: 15px; text-align: center; font-weight: 700; font-size: 14px; }
-        .dub-tag { position: absolute; top: 15px; left: 15px; background: var(--primary); color: white; padding: 4px 8px; border-radius: 5px; font-size: 10px; font-weight: 900; z-index: 5; }
+        .card-details { padding: 15px; text-align: center; font-weight: 700; font-size: 14px; color: #fff; }
+        .dub-tag { position: absolute; top: 12px; left: 12px; background: var(--primary); color: white; padding: 4px 8px; border-radius: 4px; font-size: 10px; font-weight: 900; z-index: 5; }
 
         footer { margin-top: 100px; padding: 60px 0; background: var(--bg-nav); border-top: 1px solid var(--border); text-align: center; color: var(--text-muted); }
     </style>
@@ -80,10 +83,10 @@
     <!-- AUTH SYSTEM -->
     <div class="auth-overlay" id="auth-modal">
         <div class="auth-card">
-            <h2 id="modal-title">Join MadaraAnimez</h2>
-            <input type="text" id="auth-user" placeholder="Username">
-            <input type="password" id="auth-pass" placeholder="Password">
-            <button class="auth-btn" onclick="Auth.execute()">Create Account / Login</button>
+            <h2 id="modal-title">Member Access</h2>
+            <input type="text" id="auth-user" placeholder="Create Username">
+            <input type="password" id="auth-pass" placeholder="Create Password">
+            <button class="auth-btn" onclick="Auth.execute()">Join MadaraAnimez</button>
             <p style="margin-top: 15px; font-size: 12px; color: red; cursor: pointer;" onclick="Auth.close()">Close</p>
         </div>
     </div>
@@ -93,10 +96,10 @@
             <a href="#" class="logo" onclick="location.reload()">MADARA<span>ANIMEZ</span></a>
             <div class="search-container">
                 <i class="fas fa-search"></i>
-                <input type="text" id="search-box" placeholder="Search from 100+ Dubbed Titles..." onkeyup="Engine.search()">
+                <input type="text" id="search-box" placeholder="Search dubbed titles..." onkeyup="Engine.search()">
             </div>
-            <div class="user-pill" id="user-area">
-                <div class="login-trigger" onclick="Auth.open()">Sign Up / In</div>
+            <div class="user-area" id="user-display">
+                <div class="btn-login" onclick="Auth.open()">Login / Sign Up</div>
             </div>
         </div>
     </header>
@@ -104,18 +107,14 @@
     <section class="hero" id="hero-banner">
         <div class="hero-data">
             <h1 class="hero-title" id="hero-title">One Piece</h1>
-            <p id="hero-desc" style="color: #ccc; margin-bottom: 30px;">Madara Engine V11: Perfect Mapping. All Episodes Fixed.</p>
-            <button class="btn-play" onclick="Engine.startHero()"><i class="fas fa-play"></i> Watch Episode 1</button>
+            <p id="hero-desc" style="color: #ccc; margin-bottom: 20px;">V15 Update: All Custom IDs Syncing. Dubbed Focus Active.</p>
+            <button class="btn-play" onclick="Engine.startHero()"><i class="fas fa-play"></i> Watch Now</button>
         </div>
     </section>
 
     <main class="wrapper">
         <section id="watch-section">
             <div class="player-wrapper">
-                <div id="player-loader" style="position:absolute; inset:0; background:#000; display:flex; flex-direction:column; align-items:center; justify-content:center; z-index:100;">
-                    <i class="fas fa-circle-notch fa-spin" style="font-size: 50px; color: var(--primary); margin-bottom: 20px;"></i>
-                    <p>VERIFYING SERVER CLUSTER...</p>
-                </div>
                 <iframe id="main-player" src="" allowfullscreen allow="autoplay"></iframe>
             </div>
 
@@ -125,14 +124,14 @@
                     <span id="playing-ep" style="color: var(--primary); font-weight: 800;">EPISODE 1 [DUB]</span>
                 </div>
                 <div style="display: flex;">
-                    <div class="server-btn active" onclick="Engine.switchServer('to', this)">SERVER 1</div>
-                    <div class="server-btn" onclick="Engine.switchServer('pro', this)">SERVER 2</div>
+                    <div class="server-btn active" onclick="Engine.switchServer('me', this)">SERVER 1</div>
+                    <div class="server-btn" onclick="Engine.switchServer('cc', this)">SERVER 2</div>
                 </div>
             </div>
 
             <div class="ep-box">
                 <div style="display: flex; justify-content: space-between; align-items: center;">
-                    <h3>Seasons</h3>
+                    <h3>Episode List</h3>
                     <select id="season-picker" onchange="Engine.changeSeason()" style="background: #1f222b; color: white; border: 1px solid var(--border); padding: 8px 15px; border-radius: 8px;">
                         <option value="s1">Season 1</option>
                     </select>
@@ -141,13 +140,13 @@
             </div>
         </section>
 
-        <h2 class="grid-header" id="grid-label">Elite Dubbed Library</h2>
+        <h2 class="grid-header" id="grid-label">Master Dubbed Library</h2>
         <div class="anime-grid" id="main-grid"></div>
     </main>
 
     <footer>
         <h2 class="logo">MADARA<span>ANIMEZ</span></h2>
-        <p>Copyright © 2024 MadaraAnimez - The Ultimate Fan Experience</p>
+        <p>Your Ultimate Portal for English Dubbed HD Content</p>
     </footer>
 
     <script>
@@ -156,124 +155,47 @@
             const close = () => document.getElementById('auth-modal').style.display = 'none';
             const execute = () => {
                 const user = document.getElementById('auth-user').value;
-                if(user.length < 2) return alert("Name too short");
-                localStorage.setItem('madara_user', user);
+                if(user.length < 2) return alert("Enter a valid name");
+                localStorage.setItem('madara_auth', user);
                 location.reload();
             };
             const check = () => {
-                const u = localStorage.getItem('madara_user');
-                if(u) document.getElementById('user-area').innerHTML = `<span style="font-weight:800; color:var(--primary)">Welcome, ${u}</span>`;
+                const user = localStorage.getItem('madara_auth');
+                if(user) document.getElementById('user-display').innerHTML = `<span style="font-weight:800; color:var(--primary)">Hello, ${user}</span>`;
             };
             return { open, close, execute, check };
         })();
 
         const Engine = (() => {
-            // THE 100% VERIFIED DATABASE
-            // No more "Famous Anime" placeholders. All 100 IDs are mapped correctly.
+            // DATABASE: Updated with requested Re:Zero and Blue Lock IDs
             const database = [
-                { id: 1, title: "One Piece", mal: "21", img: "onepiece.jfif", s1: 1100, type: "anime" },
-                { id: 2, title: "Invincible", tmdb: "95595", img: "invincible.jfif", s1: 8, s2: 8, type: "tv" },
-                { id: 3, title: "Jujutsu Kaisen", mal: "40748", img: "jjk.jfif", s1: 24, s2: 23, type: "anime" },
-                { id: 4, title: "Konosuba", mal: "30831", img: "konosuba.jfif", s1: 10, s2: 10, s3: 11, type: "anime" },
-                { id: 5, title: "Naruto Shippuden", mal: "1735", img: "naruto.jfif", s1: 500, type: "anime" },
-                { id: 6, title: "Solo Leveling", mal: "52299", img: "solo-leveling.jfif", s1: 12, type: "anime" },
-                { id: 7, title: "High School DxD", mal: "11617", img: "Dxd.jfif", s1: 12, s2: 12, s3: 12, s4: 13, type: "anime" },
-                { id: 8, title: "Steel Ball Run (JoJo)", mal: "14719", img: "SteelBallRun.jfif", s1: 26, s2: 24, s3: 39, type: "anime" },
-                { id: 9, title: "Attack on Titan", mal: "16498", img: "https://image.tmdb.org/t/p/w500/hEkaBwk8mcyN9a8pE6o86lnuGvD.jpg", s1: 25, s2: 12, s3: 22, type: "anime" },
-                { id: 10, title: "Demon Slayer", mal: "38000", img: "https://image.tmdb.org/t/p/w500/xUfSjsmFvGf6S7v9ws9oZ999IuN.jpg", s1: 26, s2: 18, type: "anime" },
-                { id: 11, title: "Dragon Ball Z", mal: "813", img: "https://image.tmdb.org/t/p/w500/dbz.jpg", s1: 291, type: "anime" },
-                { id: 12, title: "Death Note", mal: "1535", img: "https://image.tmdb.org/t/p/w500/dn.jpg", s1: 37, type: "anime" },
-                { id: 13, title: "Hunter x Hunter", mal: "11061", img: "https://image.tmdb.org/t/p/w500/hxh.jpg", s1: 148, type: "anime" },
-                { id: 14, title: "My Hero Academia", mal: "31964", img: "https://image.tmdb.org/t/p/w500/mha.jpg", s1: 13, s2: 25, type: "anime" },
-                { id: 15, title: "Bleach", mal: "269", img: "https://image.tmdb.org/t/p/w500/bleach.jpg", s1: 366, type: "anime" },
-                { id: 16, title: "Fullmetal Alchemist", mal: "5114", img: "https://image.tmdb.org/t/p/w500/fma.jpg", s1: 64, type: "anime" },
-                { id: 17, title: "Chainsaw Man", mal: "44511", img: "https://image.tmdb.org/t/p/w500/cm.jpg", s1: 12, type: "anime" },
-                { id: 18, title: "Black Clover", mal: "34572", img: "https://image.tmdb.org/t/p/w500/bc.jpg", s1: 170, type: "anime" },
-                { id: 19, title: "One Punch Man", mal: "30276", img: "https://image.tmdb.org/t/p/w500/opm.jpg", s1: 12, s2: 12, type: "anime" },
-                { id: 20, title: "Tokyo Ghoul", mal: "22319", img: "https://image.tmdb.org/t/p/w500/tg.jpg", s1: 12, type: "anime" },
-                { id: 21, title: "Vinland Saga", mal: "37521", img: "https://image.tmdb.org/t/p/w500/vs.jpg", s1: 24, s2: 24, type: "anime" },
-                { id: 22, title: "Mob Psycho 100", mal: "32182", img: "https://image.tmdb.org/t/p/w500/mp.jpg", s1: 12, s2: 13, type: "anime" },
-                { id: 23, title: "Code Geass", mal: "1575", img: "https://image.tmdb.org/t/p/w500/cg.jpg", s1: 25, type: "anime" },
-                { id: 24, title: "Sword Art Online", mal: "11757", img: "https://image.tmdb.org/t/p/w500/sao.jpg", s1: 25, type: "anime" },
-                { id: 25, title: "Re:Zero", mal: "31240", img: "https://image.tmdb.org/t/p/w500/rz.jpg", s1: 25, s2: 25, type: "anime" },
-                { id: 26, title: "Fire Force", mal: "38671", img: "https://image.tmdb.org/t/p/w500/ff.jpg", s1: 24, s2: 24, type: "anime" },
-                { id: 27, title: "Dr. Stone", mal: "38691", img: "https://image.tmdb.org/t/p/w500/ds.jpg", s1: 24, s2: 11, type: "anime" },
-                { id: 28, title: "Blue Lock", mal: "49596", img: "https://image.tmdb.org/t/p/w500/bl.jpg", s1: 24, type: "anime" },
-                { id: 29, title: "Seven Deadly Sins", mal: "23755", img: "https://image.tmdb.org/t/p/w500/sds.jpg", s1: 24, type: "anime" },
-                { id: 30, title: "Overlord", mal: "29803", img: "https://image.tmdb.org/t/p/w500/ol.jpg", s1: 13, s2: 13, type: "anime" },
-                { id: 31, title: "Fairy Tail", mal: "6702", img: "https://image.tmdb.org/t/p/w500/ft.jpg", s1: 175, type: "anime" },
-                { id: 32, title: "Black Lagoon", mal: "889", img: "https://image.tmdb.org/t/p/w500/bl.jpg", s1: 12, type: "anime" },
-                { id: 33, title: "Hellsing Ultimate", mal: "777", img: "https://image.tmdb.org/t/p/w500/hu.jpg", s1: 10, type: "anime" },
-                { id: 34, title: "Akame ga Kill!", mal: "22199", img: "https://image.tmdb.org/t/p/w500/agk.jpg", s1: 24, type: "anime" },
-                { id: 35, title: "Cyberpunk Edgerunners", mal: "42310", img: "https://image.tmdb.org/t/p/w500/ce.jpg", s1: 10, type: "anime" },
-                { id: 36, title: "Steins;Gate", mal: "9253", img: "https://image.tmdb.org/t/p/w500/sg.jpg", s1: 24, type: "anime" },
-                { id: 37, title: "Cowboy Bebop", mal: "1", img: "https://image.tmdb.org/t/p/w500/cb.jpg", s1: 26, type: "anime" },
-                { id: 38, title: "Tokyo Revengers", mal: "42249", img: "https://image.tmdb.org/t/p/w500/tr.jpg", s1: 24, type: "anime" },
-                { id: 39, title: "Spy x Family", mal: "48837", img: "https://image.tmdb.org/t/p/w500/sf.jpg", s1: 12, s2: 13, type: "anime" },
-                { id: 40, title: "Mushoku Tensei", mal: "39535", img: "https://image.tmdb.org/t/p/w500/mt.jpg", s1: 11, s2: 12, type: "anime" },
-                { id: 41, title: "Shield Hero", mal: "35790", img: "https://image.tmdb.org/t/p/w500/sh.jpg", s1: 25, type: "anime" },
-                { id: 42, title: "Fate/Zero", mal: "10087", img: "https://image.tmdb.org/t/p/w500/fz.jpg", s1: 13, s2: 12, type: "anime" },
-                { id: 43, title: "Monster", mal: "19", img: "https://image.tmdb.org/t/p/w500/mo.jpg", s1: 74, type: "anime" },
-                { id: 44, title: "Psycho-Pass", mal: "13601", img: "https://image.tmdb.org/t/p/w500/pp.jpg", s1: 22, type: "anime" },
-                { id: 45, title: "Parasyte", mal: "22535", img: "https://image.tmdb.org/t/p/w500/pa.jpg", s1: 24, type: "anime" },
-                { id: 46, title: "Blue Exorcist", mal: "9919", img: "https://image.tmdb.org/t/p/w500/be.jpg", s1: 25, type: "anime" },
-                { id: 47, title: "Kill la Kill", mal: "18671", img: "https://image.tmdb.org/t/p/w500/klk.jpg", s1: 24, type: "anime" },
-                { id: 48, title: "Berserk", mal: "33", img: "https://image.tmdb.org/t/p/w500/ber.jpg", s1: 25, type: "anime" },
-                { id: 49, title: "Soul Eater", mal: "3588", img: "https://image.tmdb.org/t/p/w500/se.jpg", s1: 51, type: "anime" },
-                { id: 50, title: "Haikyuu!!", mal: "20583", img: "https://image.tmdb.org/t/p/w500/hq.jpg", s1: 25, type: "anime" },
-                { id: 51, title: "Gintama", mal: "918", img: "https://image.tmdb.org/t/p/w500/gin.jpg", s1: 201, type: "anime" },
-                { id: 52, title: "Neon Genesis", mal: "30", img: "https://image.tmdb.org/t/p/w500/nge.jpg", s1: 26, type: "anime" },
-                { id: 53, title: "Clannad", mal: "2167", img: "https://image.tmdb.org/t/p/w500/cl.jpg", s1: 23, type: "anime" },
-                { id: 54, title: "Toradora!", mal: "4224", img: "https://image.tmdb.org/t/p/w500/tora.jpg", s1: 25, type: "anime" },
-                { id: 55, title: "Your Lie in April", mal: "23273", img: "https://image.tmdb.org/t/p/w500/ylia.jpg", s1: 22, type: "anime" },
-                { id: 56, title: "Oshi no Ko", mal: "52034", img: "https://image.tmdb.org/t/p/w500/onk.jpg", s1: 11, type: "anime" },
-                { id: 57, title: "Frieren", mal: "52991", img: "https://image.tmdb.org/t/p/w500/fr.jpg", s1: 28, type: "anime" },
-                { id: 58, title: "Eminence in Shadow", mal: "48316", img: "https://image.tmdb.org/t/p/w500/eis.jpg", s1: 20, type: "anime" },
-                { id: 59, title: "Hell's Paradise", mal: "46569", img: "https://image.tmdb.org/t/p/w500/hp.jpg", s1: 13, type: "anime" },
-                { id: 60, title: "Blue Lock", mal: "49596", img: "https://image.tmdb.org/t/p/w500/bl.jpg", s1: 24, type: "anime" },
-                { id: 61, title: "Avatar: TLA", tmdb: "246", img: "https://image.tmdb.org/t/p/w500/atla.jpg", s1: 20, type: "tv" },
-                { id: 62, title: "Rick and Morty", tmdb: "60625", img: "https://image.tmdb.org/t/p/w500/rm.jpg", s1: 11, type: "tv" },
-                { id: 63, title: "Ben 10", tmdb: "3102", img: "https://image.tmdb.org/t/p/w500/b10.jpg", s1: 13, type: "tv" },
-                { id: 64, title: "Teen Titans", tmdb: "2041", img: "https://image.tmdb.org/t/p/w500/tt.jpg", s1: 13, type: "tv" },
-                { id: 65, title: "Justice League", tmdb: "3231", img: "https://image.tmdb.org/t/p/w500/jl.jpg", s1: 26, type: "tv" },
-                { id: 66, title: "Regular Show", tmdb: "31132", img: "https://image.tmdb.org/t/p/w500/rs.jpg", s1: 12, type: "tv" },
-                { id: 67, title: "Adventure Time", tmdb: "15260", img: "https://image.tmdb.org/t/p/w500/ad.jpg", s1: 26, type: "tv" },
-                { id: 68, title: "The Boys: Diabolical", tmdb: "152147", img: "https://image.tmdb.org/t/p/w500/diab.jpg", s1: 8, type: "tv" },
-                { id: 69, title: "Young Justice", tmdb: "33211", img: "https://image.tmdb.org/t/p/w500/yj.jpg", s1: 26, type: "tv" },
-                { id: 70, title: "Samurai Jack", tmdb: "3051", img: "https://image.tmdb.org/t/p/w500/sj.jpg", s1: 13, type: "tv" },
-                { id: 71, title: "Arcane", tmdb: "115036", img: "https://image.tmdb.org/t/p/w500/arc.jpg", s1: 9, type: "tv" },
-                { id: 72, title: "Castlevania", tmdb: "70625", img: "https://image.tmdb.org/t/p/w500/cas.jpg", s1: 4, type: "tv" },
-                { id: 73, title: "Danny Phantom", tmdb: "3353", img: "https://image.tmdb.org/t/p/w500/dp.jpg", s1: 20, type: "tv" },
-                { id: 74, title: "Star Wars: Rebels", tmdb: "60554", img: "https://image.tmdb.org/t/p/w500/swr.jpg", s1: 15, type: "tv" },
-                { id: 75, title: "X-Men '97", tmdb: "135000", img: "https://image.tmdb.org/t/p/w500/xm97.jpg", s1: 10, type: "tv" },
-                { id: 76, title: "Primal", tmdb: "90463", img: "https://image.tmdb.org/t/p/w500/primal.jpg", s1: 10, type: "tv" },
-                { id: 77, title: "Hazbin Hotel", tmdb: "123456", img: "https://image.tmdb.org/t/p/w500/hh.jpg", s1: 8, type: "tv" },
-                { id: 78, title: "Blue Eye Samurai", tmdb: "157332", img: "https://image.tmdb.org/t/p/w500/bes.jpg", s1: 8, type: "tv" },
-                { id: 79, title: "Masters of the Universe", tmdb: "105656", img: "https://image.tmdb.org/t/p/w500/motu.jpg", s1: 10, type: "tv" },
-                { id: 80, title: "Legend of Vox Machina", tmdb: "123457", img: "https://image.tmdb.org/t/p/w500/vox.jpg", s1: 12, type: "tv" },
-                { id: 81, title: "Gundam Wing", mal: "90", img: "https://image.tmdb.org/t/p/w500/gw.jpg", s1: 49, type: "anime" },
-                { id: 82, title: "Rurouni Kenshin", mal: "45", img: "https://image.tmdb.org/t/p/w500/rk.jpg", s1: 95, type: "anime" },
-                { id: 83, title: "Saint Seiya", mal: "1254", img: "https://image.tmdb.org/t/p/w500/ss.jpg", s1: 114, type: "anime" },
-                { id: 84, title: "Sailor Moon", mal: "530", img: "https://image.tmdb.org/t/p/w500/sm.jpg", s1: 46, type: "anime" },
-                { id: 85, title: "Initial D", mal: "185", img: "https://image.tmdb.org/t/p/w500/id.jpg", s1: 26, type: "anime" },
-                { id: 86, title: "Great Teacher Onizuka", mal: "245", img: "https://image.tmdb.org/t/p/w500/gto.jpg", s1: 43, type: "anime" },
-                { id: 87, title: "Slam Dunk", mal: "170", img: "https://image.tmdb.org/t/p/w500/sd.jpg", s1: 101, type: "anime" },
-                { id: 88, title: "Trigun", mal: "6", img: "https://image.tmdb.org/t/p/w500/tri.jpg", s1: 26, type: "anime" },
-                { id: 89, title: "YuYu Hakusho", mal: "392", img: "https://image.tmdb.org/t/p/w500/yyh.jpg", s1: 112, type: "anime" },
-                { id: 90, title: "Ouran High School", mal: "853", img: "https://image.tmdb.org/t/p/w500/ohs.jpg", s1: 26, type: "anime" },
-                { id: 91, title: "Black Butler", mal: "4898", img: "https://image.tmdb.org/t/p/w500/bb.jpg", s1: 24, type: "anime" },
-                { id: 92, title: "Fruits Basket", mal: "38680", img: "https://image.tmdb.org/t/p/w500/fb.jpg", s1: 25, type: "anime" },
-                { id: 93, title: "Kaguya-sama", mal: "37999", img: "https://image.tmdb.org/t/p/w500/ks.jpg", s1: 12, type: "anime" },
-                { id: 94, title: "Overlord", mal: "29803", img: "https://image.tmdb.org/t/p/w500/ol.jpg", s1: 13, type: "anime" },
-                { id: 95, title: "Slime Isekai", mal: "37430", img: "https://image.tmdb.org/t/p/w500/sl.jpg", s1: 24, type: "anime" },
-                { id: 96, title: "No Game No Life", mal: "19815", img: "https://image.tmdb.org/t/p/w500/ng.jpg", s1: 12, type: "anime" },
-                { id: 97, title: "Your Name (Movie)", tmdb: "372058", img: "https://image.tmdb.org/t/p/w500/yn.jpg", s1: 1, type: "movie" },
-                { id: 98, title: "Spirited Away", tmdb: "129", img: "https://image.tmdb.org/t/p/w500/sa.jpg", s1: 1, type: "movie" },
-                { id: 99, title: "Akira", tmdb: "149", img: "https://image.tmdb.org/t/p/w500/ak.jpg", s1: 1, type: "movie" },
-                { id: 100, title: "The Seven Deadly Sins", mal: "23755", img: "https://image.tmdb.org/t/p/w500/7ds.jpg", s1: 24, type: "anime" }
+                { id: 1, title: "One Piece", tmdb: "37854", img: "onepiece.jfif", s1: 1100 },
+                { id: 2, title: "Naruto", tmdb: "31910", img: "naruto.jfif", s1: 220 },
+                { id: 3, title: "Solo Leveling", tmdb: "127532", img: "solo-leveling.jfif", s1: 12 },
+                { id: 4, title: "Konosuba", tmdb: "65844", img: "konosuba.jfif", s1: 10, s2: 10, s3: 11 },
+                { id: 5, title: "Invincible", tmdb: "95557", img: "invincible.jfif", s1: 8, s2: 8 },
+                { id: 6, title: "Highschool DxD", tmdb: "45950", img: "Dxd.jfif", s1: 12, s2: 12, s3: 12, s4: 13 },
+                { id: 7, title: "Tokyo Ghoul", tmdb: "61374", img: "tg.jpg", s1: 12, s2: 12 },
+                { id: 8, title: "Vinland Saga", tmdb: "88803", img: "vs.jpg", s1: 24, s2: 24 },
+                { id: 9, title: "Mob Psycho 100", tmdb: "67075", img: "mp.jpg", s1: 12, s2: 13, s3: 12 },
+                { id: 10, title: "Jujutsu Kaisen", tmdb: "95479", img: "jjk.jfif", s1: 24, s2: 23 },
+                { id: 11, title: "Steel Ball Run", tmdb: "45790", img: "SteelBallRun.jfif", s1: 24 },
+                { id: 12, title: "Attack on Titan", tmdb: "1429", img: "https://image.tmdb.org/t/p/w500/hEkaBwk8mcyN9a8pE6o86lnuGvD.jpg", s1: 25, s2: 12 },
+                { id: 13, title: "Demon Slayer", tmdb: "85937", img: "https://image.tmdb.org/t/p/w500/xUfSjsmFvGf6S7v9ws9oZ999IuN.jpg", s1: 26, s2: 18 },
+                { id: 14, title: "Re:Zero", tmdb: "65942", img: "rezero.jfif", s1: 25, s2: 25 },
+                { id: 15, title: "Blue Lock", tmdb: "131041", img: "bluelock.jfif", s1: 24 },
+                { id: 16, title: "Dragon Ball Z", tmdb: "12971", img: "https://image.tmdb.org/t/p/w500/dbz.jpg", s1: 291 },
+                { id: 17, title: "Bleach", tmdb: "30984", img: "https://image.tmdb.org/t/p/w500/bleach.jpg", s1: 366 },
+                { id: 18, title: "Fullmetal Alchemist", tmdb: "31845", img: "https://image.tmdb.org/t/p/w500/fma.jpg", s1: 64 },
+                { id: 19, title: "Chainsaw Man", tmdb: "114410", img: "https://image.tmdb.org/t/p/w500/cm.jpg", s1: 12 },
+                { id: 20, title: "Spy x Family", tmdb: "120089", img: "https://image.tmdb.org/t/p/w500/sf.jpg", s1: 25 },
+                { id: 21, title: "Naruto Shippuden", tmdb: "31911", img: "https://image.tmdb.org/t/p/w500/ns.jpg", s1: 500 },
+                { id: 22, title: "Black Clover", tmdb: "73223", img: "https://image.tmdb.org/t/p/w500/bc.jpg", s1: 170 },
+                { id: 23, title: "One Punch Man", tmdb: "63926", img: "https://image.tmdb.org/t/p/w500/opm.jpg", s1: 12, s2: 12 },
+                { id: 24, title: "Death Note", tmdb: "13916", img: "https://image.tmdb.org/t/p/w500/dn.jpg", s1: 37 }
             ];
 
-            let state = { active: database[0], ep: 1, szn: 's1', server: 'to' };
+            let state = { active: database[0], ep: 1, szn: 's1', server: 'me' };
 
             const init = () => {
                 renderGrid(database);
@@ -327,30 +249,23 @@
             const updateStream = (ep) => {
                 state.ep = ep;
                 const iframe = document.getElementById('main-player');
-                const loader = document.getElementById('player-loader');
                 const sznNum = state.szn.replace('s', '');
 
-                loader.style.display = "flex";
                 document.getElementById('playing-ep').innerText = "EPISODE " + ep + " [DUB]";
                 document.querySelectorAll('.ep-item').forEach(el => el.classList.remove('active'));
                 if(document.getElementById(`ep-link-${ep}`)) document.getElementById(`ep-link-${ep}`).classList.add('active');
 
                 let finalUrl = "";
+                const id = state.active.tmdb;
 
-                // THE V11 SMART-ROUTE FIX
-                if (state.active.type === "anime") {
-                    // For Anime: Use the /anime/ route and the MAL ID
-                    finalUrl = `https://vidsrc.to/embed/anime/${state.active.mal}/${ep}`;
-                } else if (state.active.type === "tv") {
-                    // For Western TV: Use the /tv/ route and the TMDB ID
-                    finalUrl = `https://vidsrc.to/embed/tv/${state.active.tmdb}/${sznNum}/${ep}`;
+                // STABLE ROUTING ENGINE (Works on GitHub)
+                if (state.server === 'me') {
+                    finalUrl = `https://vidsrc.me/embed/tv?tmdb=${id}&sea=${sznNum}&epi=${ep}&audio=en`;
                 } else {
-                    // For Movies
-                    finalUrl = `https://vidsrc.to/embed/movie/${state.active.tmdb}`;
+                    finalUrl = `https://vidsrc.cc/v2/embed/tv/${id}/${sznNum}/${ep}?audio=en`;
                 }
 
                 iframe.src = finalUrl;
-                setTimeout(() => { loader.style.display = "none"; }, 1500);
             };
 
             const switchServer = (srv, el) => {
